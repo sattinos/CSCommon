@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CSCommon</name>
+    </assembly>
+    <members>
+        <member name="T:CSCommon.Core.EnumStrings.DescriptionAttribute">
+            <summary>
+            Description attribute that can be used to associate string values to an enum.
+            It is meant only to be used in Enum fields
+            </summary>
+        </member>
+        <member name="F:CSCommon.Core.EnumStrings.DescriptionAttribute.CachedType">
+            <value>Cached type for avoiding calling typeof more than once.</value>
+        </member>
+        <member name="M:CSCommon.Core.EnumStrings.DescriptionAttribute.#ctor(System.String)">
+            <summary>
+            Only one positional property is required
+            </summary>
+            <param name="descriptiveText">the description text to be associated with the enum value</param>
+        </member>
+        <member name="P:CSCommon.Core.EnumStrings.DescriptionAttribute.DescriptiveText">
+            <value>read-only property for the descriptive text</value>
+        </member>
+        <member name="T:CSCommon.Core.EnumStrings.EnumDictionary">
+            <summary>
+            Use this class to access either the string value of an enum or vise versa
+            The EnumDictionary caches the results in a forward/reverse dictionary to make the second call faster.
+            Reflection overhead is only suffered once per enum
+            </summary>
+        </member>
+        <member name="M:CSCommon.Core.EnumStrings.EnumDictionary.ToString(System.Enum)">
+            <summary>
+            This method tries to find the description of an enum.
+            It throws an exception if no description is associated with it.
+            Make sure you associate a description to the enum value you pass before
+            calling this method.
+            </summary>
+            <param name="value">an enum value declared previously</param>
+            <returns>the description associated with the enum value</returns>
+        </member>
+        <member name="M:CSCommon.Core.EnumStrings.EnumDictionary.ToEnum(System.Type,System.String)">
+            <summary>
+            Tries to find the enum value for a specific description.
+            </summary>
+            <param name="enumType">The enum type of the requested enum</param>
+            <param name="value">The description of the needed enum value</param>
+            <returns>The enum associated with the requested description</returns>
+        </member>
+    </members>
+</doc>

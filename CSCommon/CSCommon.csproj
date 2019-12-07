@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\Personal_Projects\dotNetCore\CSCommon\CSCommonSol\CSCommon\CSCommon.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>
